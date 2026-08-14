@@ -1,0 +1,34 @@
+EX - 01
+
+for (let i = 0; i <= 10; i++) { 
+    console.log(i); 
+}
+
+EX - 02
+
+let i = 10; 
+while (i >= 0) { console.log(i); i--; }
+
+EX - 03
+
+let i = 0; 
+do { 
+    console.log(i); i++; 
+} while (i <= 5);
+
+EX - 04
+
+let cores = ["Vermelho", "Verde", "Azul", "Amarelo"]; 
+
+for (let cor of cores) { 
+    console.log(cor); 
+}
+
+EX - 05
+
+for (let i = 0; i <= 10; i++) { 
+    if (i === 5) {
+         break; 
+    } 
+    console.log(i); 
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Contador com Laços</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; margin-top: 40px; background: #f4f4f4; }
+        .card { background: #fff; padding: 24px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 400px; text-align: center; }
+        input, button { width: 100%; padding: 10px; margin-top: 10px; border-radius: 6px; border: 1px solid #ccc; box-sizing: border-box; }
+        button { background: #0083b0; color: #fff; border: none; cursor: pointer; }
+        #resultado { margin-top: 14px; font-weight: bold; background: #f0f0f0; padding: 10px; border-radius: 8px; text-align: left; white-space: pre-wrap; max-height: 200px; overflow-y: auto; }
+        .btn-group { display: flex; gap: 8px; }
+        .btn-group button { flex: 1; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Contador com Laços</h2>
+        <input type="number" id="valorContagem" placeholder="Digite um número">
+        <div class="btn-group">
+            <button onclick="contarFor()">FOR</button>
+            <button onclick="contarWhile()">WHILE</button>
+            <button onclick="contarDoWhile()">DO...WHILE</button>
+            <button onclick="limparResultado()">LIMPAR</button>
+        </div>
+        <div id="resultado">Clique em um botão...</div>
+    </div>
+
+    <script>
+        function limparResultado() {
+            document.getElementById("resultado").textContent = "Clique em um botão...";
+            document.getElementById("valorContagem").value = "";
+        }
+        
+        
+        function contarFor() {
+            let valor = Number(document.getElementById("valorContagem").value);
+            let resultado = document.getElementById("resultado");
+            resultado.textContent = "FOR:\n";
+            for (let i = 0; i <= valor; i++) {
+                resultado.textContent += i + "\n";
+            }
+        }
+
+        function contarWhile() {
+            let valor = Number(document.getElementById("valorContagem").value);
+            let resultado = document.getElementById("resultado");
+            let i = 0;
+            resultado.textContent = "WHILE:\n";
+            while (i <= valor) {
+                resultado.textContent += i + "\n";
+                i++;
+            }
+        }
+
+        function contarDoWhile() {
+            let valor = Number(document.getElementById("valorContagem").value);
+            let resultado = document.getElementById("resultado");
+            let i = 0;
+            resultado.textContent = "DO...WHILE:\n";
+            do {
+                resultado.textContent += i + "\n";
+                i++;
+            } while (i <= valor);
+        }
+    </script>
+
+</body>
+</html>
